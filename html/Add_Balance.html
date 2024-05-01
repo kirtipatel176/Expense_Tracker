@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Account</title>
+<style>
+  body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .add-account-form {
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .add-account-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .add-account-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  .add-account-form input[type="text"],
+  .add-account-form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 15px;
+  }
+  .add-account-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 15px;
+  }
+  .add-account-form input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  .add-account-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+  <div class="add-account-form">
+    <h2>ADD ACCOUNT</h2>
+    <form action="../php/Add_Balance.php" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Account name" required>
+      <label for="type">Account type:</label>
+      <select id="type" name="type" required>
+        <option value="general">General</option>
+        <option value="cash">cash</option>
+        <option value="current Account">current Account</option>
+        <option value="savings">Savings</option>
+       
+      </select>
+      <label for="starting-amount">Starting Amount:</label>
+      <input type="number" id="starting-amount" name="amount" placeholder="0" required>
+      <label for="currency">Currency:</label>
+      <input type="text" id="currency" name="currency" value="INR" disabled>
+    
+      <input type="checkbox" id="exclude-from-stats" name="exclude-from-stats">
+      <input type="submit" name="submit" value="save">
+    </form>
+  </div>
+</body>
+</html>
